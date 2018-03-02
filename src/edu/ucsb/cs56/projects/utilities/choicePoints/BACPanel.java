@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.util.Arrays;
 
 import java.lang.*;
 
@@ -71,6 +72,7 @@ public class BACPanel extends JPanel{
 	panel.add(weightField);
 	//create a lbs/kgs combo box
 	String weightArray[] = {"Pounds", "Kilograms "};
+        Arrays.sort(weightArray); //Sorts array in alphabetical order: all arrays with at least one letter are alphabetically sorted
 	weightUnits = new JComboBox(weightArray);
 	c.gridx = 0;
 	c.gridy = 2;
@@ -92,6 +94,7 @@ public class BACPanel extends JPanel{
 
 	//create a male/female combo box
 	String genderArray[] = {"Male", "Female     "};
+        Arrays.sort(genderArray);
 	gender = new JComboBox(genderArray);
 	c.gridx = 0;
 	c.gridy = 6;
@@ -118,10 +121,13 @@ public class BACPanel extends JPanel{
 	String types[] = {"Coors Light", "Milwaukee's Best Ice",
 			  "Keystone Ice", "Big Flats Light Beer",
 			  "Natural Ice", "Natural Light",
-			  "Bud Light Platinum", "Miller Lite","Other"};
+			  "Bud Light Platinum", "Miller Lite", "Smirnoff Ice",
+			  "Blue Moon", "IPA", "Other"};
+        Arrays.sort(types);
 
 	double typePercentages[] = {0,.042, .059, .059, .039,.059, .042,
-				    .06, .042, .05};
+				    .06, .042, .05, .05, .054, .07};
+
 	int amountOfBrands = 9;
 	beerType = new JComboBox(types);
 	c.gridx = 0;
@@ -134,6 +140,7 @@ public class BACPanel extends JPanel{
 	//Create ammount of beer label can, 40, Bullet, keg
 	
 	String bamounts[] = {"Can","40","Bullet", "Keg"};
+        Arrays.sort(bamounts);
 	double bbamounts[] = {12, 40, 16, 1984};
 	beerAmount = new JComboBox(bamounts);
 	int bamountofAmounts = 4;
@@ -159,10 +166,12 @@ public class BACPanel extends JPanel{
 	String wtypes[] = {"Moscato d'Asti", "Muscadet",
 			   "Pinot Grigio", "Bordeaux",
 			   "Sauvignon Blanc", "Pinot Noir",
-			   "Shiraz", "Zinfandel","Other"};
+			   "Shiraz", "Zinfandel", "Chardonnay",
+			   "Merlot", "Cabernet", "Other"};
 	double wtypePercentages[] = {.055, .095, .14, .135, .125, .13,
-				     .13, .18, .12};
+				     .13, .18, .12, .145, .14, .135};
 	int wamountOfBrands = 9;
+        Arrays.sort(wtypes);
 	wineType = new JComboBox(wtypes);
 	c.gridx = 0;
 	c.gridy = 14;
@@ -175,6 +184,7 @@ public class BACPanel extends JPanel{
 	//amount of wine label, glass, bottle, bag, barrel
 
 	String wamounts[] = {"Glass","Bottle","Bag", "Barrel"};
+        Arrays.sort(wamounts);
 	double wwamounts[] = {5, 25.4, 169.05, 4032};
 	wineAmount = new JComboBox(wamounts);
 	int wamountofAmounts = 4;
@@ -199,10 +209,11 @@ public class BACPanel extends JPanel{
 	String ltypes[] = {"Bourbon", "Brandy",
 			   "Everclear", "Gin",
 			   "Rum", "Sake",
-			   "Tequila", "Whiskey","Other"};
+			   "Tequila", "Whiskey", "Moonshine", "Vodka", "Scotch", "Other"};
 	double ltypePercentages[] = {.51, .4, .8, .375, .42, .15,
-				     .47, .533, .45};
+				     .47, .533, .45, .75, .4, .4};
 	int lamountOfBrands = 9;
+        Arrays.sort(ltypes);
 	liqType = new JComboBox(ltypes);
 	c.gridx = 0;
 	c.gridy = 18;
@@ -218,6 +229,7 @@ public class BACPanel extends JPanel{
 
 	String lamounts[] = {"Shot","Doubleshot","Bottle", "Handle"};
 	double llamounts[] = {1.5, 3,25.6 ,59.2};
+        Arrays.sort(lamounts);
 	liqAmount = new JComboBox(lamounts);
 	int lamountofAmounts = 4;
 	JLabel liqAmountLabel = new JLabel("Amount of Liqour");
